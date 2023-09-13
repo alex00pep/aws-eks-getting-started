@@ -22,7 +22,7 @@ Before starting cluster creation, you must install and configure the following t
 
 
 In this case, for simplicity purposes I created an admin user with *PowerUserAccess* permission set, so that user can do everything on AWS services except managing Users and Groups.
-
+AWS AIM Identity Center - Establish an administrative user completely (https://docs.aws.amazon.com/singlesignon/latest/userguide/getting-started.html)
 AWS CLI - you must authenticate using [IAM Identity Center with automatic token refresh] (https://docs.aws.amazon.com/sdkref/latest/guide/access-sso.html) or (https://docs.aws.amazon.com/cli/latest/userguide/sso-configure-profile-token.html)
  or [Authenticate with short-term credentials] (https://docs.aws.amazon.com/cli/latest/userguide/cli-authentication-short-term.html). I prefer the first one and the reason is to comply with SSO standards and authentication workflows via federation identity providers like Active Directory or Okta.
  
@@ -30,6 +30,8 @@ kubectl – A command line tool for working with Kubernetes clusters. For more i
 [Installing or updating kubectl] (https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html).
 eksctl – A command line tool for working with EKS clusters that automates many individual tasks. For more information, see [Installing or updating eksctl] (https://docs.aws.amazon.com/eks/latest/userguide/eksctl.html).
 
+
+**PROD-Ready** For production-ready IAM permissions and cluster security please read below, after you finish this tutorial. 
 Required IAM permissions – The IAM security principal that you're using must have permissions to work with Amazon EKS IAM roles, service linked roles, AWS CloudFormation, a VPC, and related resources. For more information, see [Actions, resources, and condition keys for Amazon Elastic Container Service for Kubernetes](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelastickubernetesservice.html) and [Using service-linked roles](https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html) in the IAM User Guide. You must complete all steps in this guide as the same user. 
 
 
@@ -62,15 +64,18 @@ kubectl get nodes -o wide
 ```
 kubectl get pods -A -o wide
 ```
-### Step 3. Delete your cluster and nodes
+### Step 3. Delete your cluster and nodes [Optional]
 After you've finished with the cluster and nodes that you created for this tutorial, you should clean up by deleting the cluster and nodes with the following command. If you want to do more with this cluster before you clean up, see Next steps.
 ```
 eksctl delete cluster --name my-cluster --region region-code
 ```
 ## Conclusions:
-As of 09/12/2023: eksctlk and kubectl are two great command line tools that provide you seemlesly integration and great performance when it comes to creating a Kubernetes cluster on AWS-EKS.
+
+As of 09/12/2023: eksctlk and kubectl are two great command line tools that provide you smooth integration and great performance when it comes to creating a Kubernetes cluster on AWS-EKS.
+AWS CLI provides the foundation 
 
 ## Next Steps:
+
 [See here](https://docs.aws.amazon.com/eks/latest/userguide/getting-started-eksctl.html#gs-eksctl-next-steps)
 
 ## Authors
