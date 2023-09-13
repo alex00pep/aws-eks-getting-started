@@ -74,7 +74,6 @@ eksctl delete cluster --name my-cluster --region region-code
 ## Conclusions:
 
 As of 09/12/2023: eksctlk and kubectl are two great command line tools that provide you smooth integration and great performance when it comes to creating a Kubernetes cluster on AWS-EKS.
-AWS CLI provides the foundation 
 
 ## Next Steps:
 
