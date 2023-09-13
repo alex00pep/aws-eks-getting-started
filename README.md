@@ -22,9 +22,11 @@ Before starting cluster creation, you must install and configure the following t
 
 
 In this case, for simplicity purposes I created an admin user with *PowerUserAccess* permission set, so that user can do everything on AWS services except managing Users and Groups.
+
 AWS AIM Identity Center - Establish an administrative user completely (https://docs.aws.amazon.com/singlesignon/latest/userguide/getting-started.html)
-AWS CLI - you must authenticate using [IAM Identity Center with automatic token refresh] (https://docs.aws.amazon.com/sdkref/latest/guide/access-sso.html) or (https://docs.aws.amazon.com/cli/latest/userguide/sso-configure-profile-token.html)
- or [Authenticate with short-term credentials] (https://docs.aws.amazon.com/cli/latest/userguide/cli-authentication-short-term.html). I prefer the first one and the reason is to comply with SSO standards and authentication workflows via federation identity providers like Active Directory or Okta.
+AWS CLI - you must authenticate using [IAM Identity Center with automatic token refresh](https://docs.aws.amazon.com/sdkref/latest/guide/access-sso.html) or (https://docs.aws.amazon.com/cli/latest/userguide/sso-configure-profile-token.html)
+ or [Authenticate with short-term credentials](https://docs.aws.amazon.com/cli/latest/userguide/cli-authentication-short-term.html). 
+ I prefer the first one and the reason is to comply with SSO standards and authentication workflows via federation identity providers like Active Directory or Okta.
  
 kubectl – A command line tool for working with Kubernetes clusters. For more information, see.
 [Installing or updating kubectl] (https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html).
